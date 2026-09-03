@@ -36,6 +36,8 @@
     "ctaTitle": "Vous avez eu une bonne expérience avec Riory ?",
     "ctaBody": "Partagez votre avis et aidez d'autres personnes de votre région à faire le bon choix.",
     "ctaButton": "Laisser un avis",
-    "backToSite": "Retour à riory.be"
+    "backToSite": "Retour à riory.be",
+    "ctaAppointment": "Prendre rendez-vous",
+    "ctaCall": "Appelez"
   }
 }
