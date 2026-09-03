@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "services": "Onze Diensten",
+    "whyUs": "Waarom Kiezen Voor Ons?",
+    "references": "Referenties",
+    "appointment": "Afspraak",
+    "regions": "Regio's",
+    "regionsLimburg": "Limburg",
+    "regionsLiege": "Luik regio"
+  },
+  "footer": {
+    "tagline1": "Sterk in Rioleringswerk.",
+    "tagline2": "Professionele infrastructuurwerken in België.",
+    "quickLinks": "Snelle links",
+    "home": "Home",
+    "services": "Onze Diensten",
+    "whyUs": "Waarom Kiezen Voor Ons?",
+    "references": "Referenties",
+    "calculator": "Prijscalculator",
+    "appointment": "Afspraak",
+    "follow": "Volg ons",
+    "rights": "Alle rechten voorbehouden.",
+    "dataProtection": "Data Protection Notice",
+    "privacy": "Privacy Policy",
+    "terms": "Gebruiksvoorwaarden",
+    "generalTerms": "Algemene Voorwaarden",
+    "cookies": "Privacy & Cookiebeleid",
+    "regionsLimburg": "Werkgebied Limburg",
+    "regionsLiege": "Werkgebied Luik"
+  },
+  "reviews": {
+    "eyebrow": "Wat klanten zeggen",
+    "title": "Beoordelingen van Riory",
+    "subtitle": "Echte ervaringen van klanten uit Limburg en de regio Luik over onze 24/7 rioleringsdiensten.",
+    "ratingSuffix": "op basis van {{count}} Google-beoordelingen",
+    "ctaTitle": "Zelf een goede ervaring gehad met Riory?",
+    "ctaBody": "Deel je beoordeling en help andere mensen in jouw buurt de juiste keuze te maken.",
+    "ctaButton": "Laat een review achter",
+    "backToSite": "Terug naar riory.be"
+  }
+}

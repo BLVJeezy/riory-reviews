@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "services": "Our Services",
+    "whyUs": "Why Choose Us?",
+    "references": "References",
+    "appointment": "Book Now",
+    "regions": "Regions",
+    "regionsLimburg": "Limburg",
+    "regionsLiege": "Liège region"
+  },
+  "footer": {
+    "tagline1": "Strong in sewer work.",
+    "tagline2": "Professional infrastructure work in Belgium.",
+    "quickLinks": "Quick links",
+    "home": "Home",
+    "services": "Our Services",
+    "whyUs": "Why Choose Us?",
+    "references": "References",
+    "calculator": "Price calculator",
+    "appointment": "Book Now",
+    "follow": "Follow us",
+    "rights": "All rights reserved.",
+    "dataProtection": "Data Protection Notice",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "generalTerms": "General Terms",
+    "cookies": "Privacy & Cookie Policy",
+    "regionsLimburg": "Service area Limburg",
+    "regionsLiege": "Service area Liège"
+  },
+  "reviews": {
+    "eyebrow": "What customers say",
+    "title": "Riory Reviews",
+    "subtitle": "Real experiences from customers in Limburg and the Liège region about our 24/7 sewer services.",
+    "ratingSuffix": "based on {{count}} Google reviews",
+    "ctaTitle": "Had a great experience with Riory?",
+    "ctaBody": "Share your review and help other people in your area make the right choice.",
+    "ctaButton": "Leave a review",
+    "backToSite": "Back to riory.be"
+  }
+}

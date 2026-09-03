@@ -1,0 +1,41 @@
+{
+  "nav": {
+    "services": "Nos Services",
+    "whyUs": "Pourquoi Nous Choisir ?",
+    "references": "Références",
+    "appointment": "Rendez-vous",
+    "regions": "Régions",
+    "regionsLimburg": "Limbourg",
+    "regionsLiege": "Région de Liège"
+  },
+  "footer": {
+    "tagline1": "Forts dans les travaux d'égouts.",
+    "tagline2": "Travaux d'infrastructure professionnels en Belgique.",
+    "quickLinks": "Liens rapides",
+    "home": "Accueil",
+    "services": "Nos Services",
+    "whyUs": "Pourquoi Nous Choisir ?",
+    "references": "Références",
+    "calculator": "Calculateur de prix",
+    "appointment": "Rendez-vous",
+    "follow": "Suivez-nous",
+    "rights": "Tous droits réservés.",
+    "dataProtection": "Avis de protection des données",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "generalTerms": "Conditions générales",
+    "cookies": "Confidentialité & Cookies",
+    "regionsLimburg": "Zone Limbourg",
+    "regionsLiege": "Zone Liège"
+  },
+  "reviews": {
+    "eyebrow": "Ce que disent nos clients",
+    "title": "Avis sur Riory",
+    "subtitle": "Expériences réelles de clients du Limbourg et de la région liégeoise à propos de nos services d'égouts 24/7.",
+    "ratingSuffix": "basé sur {{count}} avis Google",
+    "ctaTitle": "Vous avez eu une bonne expérience avec Riory ?",
+    "ctaBody": "Partagez votre avis et aidez d'autres personnes de votre région à faire le bon choix.",
+    "ctaButton": "Laisser un avis",
+    "backToSite": "Retour à riory.be"
+  }
+}
