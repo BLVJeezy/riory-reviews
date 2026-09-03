@@ -88,8 +88,11 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "tick-up": "tick-up 0.4s ease-out forwards",
-        "scroll-left": "scroll-left var(--marquee-duration, 60s) linear infinite",
-        "scroll-right": "scroll-right var(--marquee-duration, 60s) linear infinite",
+        // Geen var() in de animation-shorthand: iOS Safari kan die niet
+        // betrouwbaar parsen, waardoor de animatie daar helemaal niet start.
+        // De looptijd wordt per marquee via een inline animationDuration gezet.
+        "scroll-left": "scroll-left 60s linear infinite",
+        "scroll-right": "scroll-right 60s linear infinite",
       },
     },
   },

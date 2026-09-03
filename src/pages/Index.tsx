@@ -79,17 +79,13 @@ const Index = () => {
               <Button variant="cta" size="lg" className="rounded-full" asChild>
                 <a href={riorySiteUrl("/afspraak", lang)}>{t("reviews.ctaAppointment")}</a>
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full border-2 font-heading font-bold uppercase tracking-wider"
-                asChild
+              <a
+                href={PHONE_HREF}
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[hsl(var(--urgent))] px-8 font-heading text-sm font-bold uppercase tracking-wider text-[hsl(var(--urgent-foreground))] shadow-[0_4px_20px_hsl(var(--urgent)/0.4)] transition-shadow hover:shadow-[0_0_30px_hsl(var(--urgent)/0.7)]"
               >
-                <a href={PHONE_HREF}>
-                  <Phone className="mr-2 h-4 w-4" />
-                  {t("reviews.ctaCall")} {PHONE_NUMBER}
-                </a>
-              </Button>
+                <Phone className="h-4 w-4 fill-current" />
+                {t("reviews.ctaCall")} {PHONE_NUMBER}
+              </a>
             </div>
 
             <a

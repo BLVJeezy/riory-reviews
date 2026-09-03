@@ -1,9 +1,9 @@
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface MarqueeProps {
   children: ReactNode;
-  /** Looptijd van één volledige cyclus. Langer = trager. */
+  /** Looptijd van één volledige cyclus, bv. "60s". Langer = trager. */
   duration?: string;
   direction?: "left" | "right";
   /** Fade-randen links/rechts zodat items zacht in- en uitlopen. */
@@ -17,6 +17,14 @@ interface MarqueeProps {
  * schuift exact 50% op, zodat de tweede kopie precies overneemt waar de
  * eerste eindigt. De duplicaten zijn aria-hidden zodat screenreaders en
  * crawlers de content maar één keer zien.
+ *
+ * Mobiel-specifieke details:
+ * - De looptijd staat als inline animationDuration en niet als var() in de
+ *   animation-shorthand; iOS Safari start de animatie anders niet.
+ * - Pauzeren op hover geldt alleen op apparaten met een echte muis, want op
+ *   touch blijft een :hover-status na een tik hangen en zou de loop stoppen.
+ * - Bij "verminder bewegingen" staat de animatie stil, maar wordt de rij
+ *   handmatig swipebaar zodat alle content bereikbaar blijft.
  */
 const Marquee = ({
   children,
@@ -25,34 +33,39 @@ const Marquee = ({
   fade = true,
   className,
   itemClassName,
-}: MarqueeProps) => {
-  const style = { "--marquee-duration": duration } as CSSProperties;
-
-  return (
+}: MarqueeProps) => (
+  <div
+    className={cn(
+      "group relative w-full overflow-hidden",
+      "motion-reduce:overflow-x-auto motion-reduce:snap-x motion-reduce:snap-mandatory",
+      className
+    )}
+  >
     <div
-      className={cn("group relative w-full overflow-hidden", className)}
-      style={style}
-    >
-      <div
-        className={cn(
-          "flex w-max motion-reduce:animate-none group-hover:[animation-play-state:paused]",
-          direction === "left" ? "animate-scroll-left" : "animate-scroll-right"
-        )}
-      >
-        <div className={cn("flex shrink-0", itemClassName)}>{children}</div>
-        <div className={cn("flex shrink-0", itemClassName)} aria-hidden="true">
-          {children}
-        </div>
-      </div>
-
-      {fade && (
-        <>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-20 bg-gradient-to-r from-background to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-20 bg-gradient-to-l from-background to-transparent" />
-        </>
+      style={{ animationDuration: duration }}
+      className={cn(
+        "flex w-max [transform:translateZ(0)] [backface-visibility:hidden]",
+        direction === "left" ? "animate-scroll-left" : "animate-scroll-right",
+        "motion-reduce:animate-none motion-reduce:[transform:none]",
+        "[@media(hover:hover)]:group-hover:[animation-play-state:paused]"
       )}
+    >
+      <div className={cn("flex shrink-0", itemClassName)}>{children}</div>
+      <div
+        className={cn("flex shrink-0 motion-reduce:hidden", itemClassName)}
+        aria-hidden="true"
+      >
+        {children}
+      </div>
     </div>
-  );
-};
+
+    {fade && (
+      <>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-background to-transparent sm:w-20 motion-reduce:hidden" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-background to-transparent sm:w-20 motion-reduce:hidden" />
+      </>
+    )}
+  </div>
+);
 
 export default Marquee;
