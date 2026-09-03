@@ -71,9 +71,14 @@ const Index = () => {
                   <p className="text-foreground/90 font-body leading-relaxed text-sm">
                     “{review.body}”
                   </p>
-                  <span className="mt-auto pt-2 text-sm font-heading font-semibold text-foreground">
-                    {review.author}
-                  </span>
+                  <div className="mt-auto pt-2 flex items-baseline justify-between gap-2">
+                    <span className="text-sm font-heading font-semibold text-foreground">
+                      {review.author}
+                    </span>
+                    {review.date && (
+                      <span className="text-xs text-muted-foreground font-body">{review.date}</span>
+                    )}
+                  </div>
                 </article>
               ))}
             </div>
