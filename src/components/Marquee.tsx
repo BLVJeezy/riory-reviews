@@ -23,8 +23,9 @@ interface MarqueeProps {
  *   animation-shorthand; iOS Safari start de animatie anders niet.
  * - Pauzeren op hover geldt alleen op apparaten met een echte muis, want op
  *   touch blijft een :hover-status na een tik hangen en zou de loop stoppen.
- * - Bij "verminder bewegingen" staat de animatie stil, maar wordt de rij
- *   handmatig swipebaar zodat alle content bereikbaar blijft.
+ * - De marquee blijft bewust ook doorlopen wanneer "verminder bewegingen"
+ *   aanstaat: dit is decoratieve content en moet er op elk toestel hetzelfde
+ *   uitzien als op desktop.
  */
 const Marquee = ({
   children,
@@ -34,35 +35,25 @@ const Marquee = ({
   className,
   itemClassName,
 }: MarqueeProps) => (
-  <div
-    className={cn(
-      "group relative w-full overflow-hidden",
-      "motion-reduce:overflow-x-auto motion-reduce:snap-x motion-reduce:snap-mandatory",
-      className
-    )}
-  >
+  <div className={cn("group relative w-full overflow-hidden", className)}>
     <div
       style={{ animationDuration: duration }}
       className={cn(
-        "flex w-max [transform:translateZ(0)] [backface-visibility:hidden]",
+        "flex w-max [transform:translateZ(0)] [backface-visibility:hidden] [will-change:transform]",
         direction === "left" ? "animate-scroll-left" : "animate-scroll-right",
-        "motion-reduce:animate-none motion-reduce:[transform:none]",
         "[@media(hover:hover)]:group-hover:[animation-play-state:paused]"
       )}
     >
       <div className={cn("flex shrink-0", itemClassName)}>{children}</div>
-      <div
-        className={cn("flex shrink-0 motion-reduce:hidden", itemClassName)}
-        aria-hidden="true"
-      >
+      <div className={cn("flex shrink-0", itemClassName)} aria-hidden="true">
         {children}
       </div>
     </div>
 
     {fade && (
       <>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-background to-transparent sm:w-20 motion-reduce:hidden" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-background to-transparent sm:w-20 motion-reduce:hidden" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-background to-transparent sm:w-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-background to-transparent sm:w-20" />
       </>
     )}
   </div>
