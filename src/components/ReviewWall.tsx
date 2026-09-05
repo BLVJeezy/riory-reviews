@@ -16,9 +16,11 @@ const StarRow = ({ rating }: { rating: number }) => (
 const ReviewCard = ({ review }: { review: Review }) => (
   <article className="flex w-[280px] sm:w-[320px] md:w-[360px] shrink-0 flex-col gap-3 rounded-2xl border border-border bg-card p-5 md:p-6">
     <StarRow rating={review.rating} />
-    <p className="font-body text-sm leading-relaxed text-foreground/90 line-clamp-6">
-      “{review.body}”
-    </p>
+    {review.body && (
+      <p className="font-body text-sm leading-relaxed text-foreground/90 line-clamp-6">
+        “{review.body}”
+      </p>
+    )}
     <div className="mt-auto flex items-baseline justify-between gap-2 pt-1">
       <span className="font-heading text-sm font-semibold text-foreground">{review.author}</span>
       {review.date && (
